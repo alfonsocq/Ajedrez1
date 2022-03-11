@@ -1,22 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
+    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    {%block colores%}
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css')}}">
-
+    {%endblock%}
 
 </head>
 <body>
-    <h1></h1>
+    
+    <h1>Tablero de Ajedrez</h1>
+
+    {% block tablero %}
     <table class="separador">
+        
+        {% for b in range (4): %}
         <tr>
+            {% for b in range (4): %}
             <td class="alfa"></td>
             <td class="beta"></td>
+            {% endfor %}            
         </tr>
-    </table>
+        <tr>
+            {% for b in range (4): %}
+            <td class="beta"></td>
+            <td class="alfa"></td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+        
+     /table>
+    {% endblock%}
     
 </body>
 </html>

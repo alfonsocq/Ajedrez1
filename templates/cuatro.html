@@ -1,0 +1,25 @@
+{% extends "index.html" %}
+{%block colores%}
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style2.css')}}">
+{%endblock%}
+{% block tablero %}
+    <table class="separador">
+        
+        {% for b in range (2): %}
+        <tr>
+            {% for b in range (4): %}
+            <td class="delta"></td>
+            <td class="omega"></td>
+            {% endfor %}            
+        </tr>
+        <tr>
+            {% for b in range (4): %}
+            <td class="omega"></td>
+            <td class="delta"></td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+        
+    </table>
+  
+{% endblock %}
